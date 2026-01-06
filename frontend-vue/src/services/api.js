@@ -1,7 +1,7 @@
 // frontend-vue/src/services/api.js
 import axios from 'axios'
 
-const BASE_URL = 'http://complaint-triage-backend-env.eba-j3zfgypt.ap-south-1.elasticbeanstalk.com/'
+const BASE_URL = 'https://complaint-triage-backend-env.eba-j3zfgypt.ap-south-1.elasticbeanstalk.com'
 
 const apiClient = axios.create({
   baseURL: BASE_URL,
