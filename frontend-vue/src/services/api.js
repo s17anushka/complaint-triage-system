@@ -1,7 +1,7 @@
 // frontend-vue/src/services/api.js
 import axios from 'axios'
 
-const BASE_URL = "http://ec2-15-206-128-160.ap-south-1.compute.amazonaws.com:8000"
+const BASE_URL = 'http://127.0.0.1:8000'
 
 const apiClient = axios.create({
   baseURL: BASE_URL,
