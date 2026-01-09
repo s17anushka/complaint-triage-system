@@ -45,67 +45,48 @@ The system provides two main interfaces:
 - Vite
 
 ---
-
 ## Project Structure
+ complaint-triage-system/
+│
+├── backend/
+│   ├── app/
+│   │   ├── routers/
+│   │   │   ├── auth.py
+│   │   │   └── complaints.py
+│   │   ├── agent.py
+│   │   ├── ai_reply.py
+│   │   ├── auth.py
+│   │   ├── database.py
+│   │   ├── email_service.py
+│   │   ├── main.py
+│   │   ├── models.py
+│   │   ├── schemas.py
+│   │   └── utils.py
+│   │
+│   ├── create_admin.py
+│   ├── init_db.py
+│   └── requirements.txt
+│
+├── frontend-vue/
+│   ├── src/
+│   │   ├── components/     
+│   │   ├── views/          
+│   │   ├── services/       
+│   │   │   └── api.js
+│   │   ├── stores/         
+│   │   └── main.js
+│   │
+│   ├── public/
+│   ├── index.html
+│   ├── package.json
+│   └── vite.config.js
+│
+├── .gitignore
+└── README.md
 
 
 
-## Project Structure
 
-backend/
-├── app/
-├── create_admin.py
-├── init_db.py
-└── requirements.txt
-
-frontend-vue/
-└── src/
-
-
----
-
-## Configuration
-
-Sensitive values are managed using environment variables.
-
-```bash
-GROQ_API_KEY=your_groq_api_key
-SENDGRID_API_KEY=your_sendgrid_api_key
-SENDGRID_FROM_EMAIL=verified_sender@example.com
-
-JWT_SECRET_KEY=your_secret_key
-ADMIN_EMAIL=admin@example.com
-ADMIN_PASSWORD=strongpassword
-
-## Running the Backend (Local)
-cd backend
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-uvicorn app.main:app --host 0.0.0.0 --port 8000
-
-## API documentation:
-
-http://localhost:8000/docs
-
-
-## Running the frontend (Local)
-cd frontend-vue
-npm install
-npm run dev
-
-## frontend will be available at
-
-http://localhost:5173
-
-
-## Notes
-
-- Admin routes are protected using JWT authentication
-
-- No credentials or API keys are committed to the repository
-
-- Each user runs the project with their own local database
 
 ## System Flow Diagram
 
@@ -164,4 +145,51 @@ http://localhost:5173
 │    User      │
 │ (Email Reply)│
 └──────────────┘
+
+
+
+---
+
+## Configuration
+
+Sensitive values are managed using environment variables.
+
+```bash
+GROQ_API_KEY=your_groq_api_key
+SENDGRID_API_KEY=your_sendgrid_api_key
+SENDGRID_FROM_EMAIL=verified_sender@example.com
+
+JWT_SECRET_KEY=your_secret_key
+ADMIN_EMAIL=admin@example.com
+ADMIN_PASSWORD=strongpassword
+
+## Running the Backend (Local)
+cd backend
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+uvicorn app.main:app --host 0.0.0.0 --port 8000
+
+## API documentation:
+
+http://localhost:8000/docs
+
+
+## Running the frontend (Local)
+cd frontend-vue
+npm install
+npm run dev
+
+## frontend will be available at
+
+http://localhost:5173
+
+
+## Notes
+
+- Admin routes are protected using JWT authentication
+
+- No credentials or API keys are committed to the repository
+
+- Each user runs the project with their own local database
 
